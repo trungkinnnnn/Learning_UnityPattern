@@ -1,0 +1,25 @@
+
+# ==== Unity Fordel For Ingnore ==== #
+[Ll]ibrary/
+[Ll]ogs/
+[Tt]emp/
+[Oo]bj/
+[Uu]serSettings/
+[Bb]uild/
+[Bb]uilds/
+
+# ==== VS ==== #
+.vs
+.vsconfig
+.collabignore
+*.csproj
+*.sln
+
+# ==== Others ==== #
+*.apk
+*.aab
+*.bak
+*.swp
+*.tmp
+*.log
+
