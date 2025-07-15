@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -8,7 +6,10 @@ public class PlayerInput : MonoBehaviour
     public bool JumpPressed {  get; private set; }
     public bool AttactPressed { get; private set; } 
 
-    public void SetMoveInput(Vector2 input) => MoveInput = input;
+    public void SetMoveLeftDown() => MoveInput = Vector2.left;
+    public void SetMoveRightDown() => MoveInput = Vector2.right;    
+
+    public void StopMove() => MoveInput = Vector2.zero;
 
     public void OnJumpButtonDown() => JumpPressed = true;
     public void OnAttackButtonDown() => AttactPressed = true;

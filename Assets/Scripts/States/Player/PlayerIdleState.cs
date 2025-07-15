@@ -6,19 +6,12 @@ public class PlayerIdleState : IPlayerState
     public void Enter(PlayerController controller)
     {
         this.controller = controller;
-        controller.Animator.SetBool("isRunning", false);
-        controller.Animator.SetBool("isJumping", false);
+        //controller.Animator.SetBool("isJumping", false);
     }
 
     public void Update()
     {
-        var input = controller.PlayerInput;
-
-        if (input.MoveInput.x != 0)
-        {
-            controller.ChangeState(new PlayerRunState());
-            return;
-        }    
+        var input = controller.PlayerInput; 
 
         if (input.JumpPressed)
         {
