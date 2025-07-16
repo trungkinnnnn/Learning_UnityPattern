@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
   
     public void Move(float xInput)
     {
+        Debug.Log("Input : " + xInput);
         rb.velocity = new Vector2 (xInput * playerData.moveSpeed, rb.velocity.y);
 
         if (xInput != 0) sr.flipX = xInput < 0;  

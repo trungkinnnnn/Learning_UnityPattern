@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class PlayerIdleState : IPlayerState
 {
     private PlayerController controller;
@@ -12,6 +14,18 @@ public class PlayerIdleState : IPlayerState
     public void Update()
     {
         var input = controller.PlayerInput; 
+
+
+        if(Mathf.Abs(input.MoveInput.x) > 0.1f)
+        {
+            controller.PlayerMovement.Move(input.MoveInput.x);
+        }
+        else
+        {
+            controller.PlayerMovement.Move(0);
+        }
+
+
 
         if (input.JumpPressed)
         {
