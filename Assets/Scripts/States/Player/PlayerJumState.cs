@@ -1,9 +1,13 @@
 
-public class PlayerJumState : IPlayerState
+public class PlayerJumState : IState<PlayerController>
 {
-    private PlayerController Controller;
-
-    public void Enter(PlayerController controller) { }
-    public void Update() { }
-    public void Exit() { }
+    public void Enter(PlayerController controller) 
+    {
+        controller.PlayerMovement.Jump();
+    }
+    public void Update(PlayerController controller) 
+    {
+      
+    }
+    public void Exit(PlayerController controller) { }
 }

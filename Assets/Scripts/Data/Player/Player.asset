@@ -16,3 +16,4 @@ MonoBehaviour:
   jumpForce: 5
   dashForce: 5
   attackColdDown: 0.5
+  acceleration: 7
