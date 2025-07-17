@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerAttackState : IState<PlayerController>
 {
     private float timer = 0.5f;
+    public int Priority => 2;
+
     public void Enter(PlayerController controller) 
     {
         controller.Animator.SetTrigger("Attack");

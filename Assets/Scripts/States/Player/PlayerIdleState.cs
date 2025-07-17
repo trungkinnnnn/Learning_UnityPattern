@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class PlayerIdleState : IState<PlayerController>
 {
+    public int Priority => 0;
     public void Enter(PlayerController controller)
     {
-       
-        //controller.Animator.SetBool("isJumping", false);
+        controller.Animator.Play("WalkRunBlend");
     }
 
     public void Update(PlayerController controller)

@@ -48,22 +48,17 @@ public class StackStateMachine<T>
 
         var currentState = stateStack.Peek();
 
-        ITransitionBlocker<T> blocker = currentState as ITransitionBlocker<T>;
-
-        if(blocker != null && blocker.BlockAllTransitions)
-        {
-            currentState.Update(context);
-            return ;
-        }
-
         foreach(var transition in transitions)
         {
             if(transition.Condition(context))
             {
-                if (blocker != null && blocker.ShouldBlockTransition(transition.TargetState))
-                    continue ;
+                var nextState = transition.TargetState;
 
-                PushState(transition.TargetState);
+                if(nextState.Priority > currentState.Priority)
+                {
+                    PushState(nextState);
+                }
+
                 return ;
             }
         }

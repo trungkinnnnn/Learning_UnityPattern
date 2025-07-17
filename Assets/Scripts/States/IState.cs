@@ -1,6 +1,7 @@
 
 public interface IState<T>
 {
+    int Priority { get; }
     void Enter(T context);
     void Update(T context);    
     void Exit(T context);
